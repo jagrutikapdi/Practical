@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="font_xtra_large">@dimen/_20ssp</dimen>
+    <dimen name="screen_margin">@dimen/_30sdp</dimen>
+    <dimen name="screen_margin_20">@dimen/_20sdp</dimen>
+</resources>

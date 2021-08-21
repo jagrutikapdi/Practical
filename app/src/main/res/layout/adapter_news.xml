@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.practical.data.model.Articles" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:background="@android:color/white"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/_3sdp"
+        app:cardElevation="@dimen/_10sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_5sdp">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:padding="@dimen/_8sdp"
+                android:text="@{data.title}"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Supreme Court Grants Temporary Reprieve to Biden Immigration Policy" />
+
+            <TextView
+                android:id="@+id/tvDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:gravity="start"
+                android:padding="@dimen/_4sdp"
+                android:paddingBottom="@dimen/_15sdp"
+                android:text="@{data.author}"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                tools:ignore="MissingConstraints"
+                tools:text="Eileen Sullivan, Adam Liptak" />
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/tvDrawerDate"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_margin="@dimen/_5sdp"-->
+            <!--                android:background="@drawable/rounded_yellow"-->
+            <!--                android:gravity="center"-->
+            <!--                android:padding="@dimen/_10sdp"-->
+            <!--                android:text="@string/draw_date"-->
+            <!--                android:textAllCaps="true"-->
+            <!--                android:textColor="@android:color/black"-->
+            <!--                android:textSize="@dimen/_12sdp"-->
+            <!--                android:textStyle="bold"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/ivProductImage" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/timeRemaining"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:gravity="center"-->
+            <!--                android:padding="@dimen/_10sdp"-->
+            <!--                android:text="@string/time_remaining"-->
+            <!--                android:textAllCaps="true"-->
+            <!--                android:textColor="@android:color/darker_gray"-->
+            <!--                android:textSize="@dimen/_12sdp"-->
+            <!--                android:textStyle="bold"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/tvDrawerDate" />-->
+
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="@dimen/_10sdp"-->
+            <!--                android:layout_marginEnd="@dimen/_10sdp"-->
+            <!--                android:orientation="horizontal"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/timeRemaining">-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:background="@android:color/darker_gray"-->
+            <!--                    android:gravity="center"-->
+            <!--                    android:orientation="vertical"-->
+            <!--                    android:padding="@dimen/_10sdp"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent">-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/tvDaysCount"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:textColor="@android:color/black"-->
+            <!--                        android:textSize="@dimen/_16ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        tools:text="8" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/tvDays"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:textColor="@android:color/black"-->
+            <!--                        android:textSize="@dimen/_10ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        android:text="Days" />-->
+            <!--                </LinearLayout>-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_marginBottom="@dimen/_15sdp"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginStart="@dimen/_10sdp"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:background="@android:color/darker_gray"-->
+            <!--                    android:gravity="center"-->
+            <!--                    android:orientation="vertical"-->
+            <!--                    android:padding="@dimen/_10sdp"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent">-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/tvhoursCount"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:textColor="@android:color/black"-->
+            <!--                        android:textSize="@dimen/_16ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        tools:text="8" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/tvhours"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:textColor="@android:color/black"-->
+            <!--                        android:textSize="@dimen/_10ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        android:text="Hours" />-->
+            <!--                </LinearLayout>-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginStart="@dimen/_10sdp"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:background="@android:color/darker_gray"-->
+            <!--                    android:gravity="center"-->
+            <!--                    android:orientation="vertical"-->
+            <!--                    android:padding="@dimen/_10sdp"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent">-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/tvMinsCount"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:textColor="@android:color/black"-->
+            <!--                        android:textSize="@dimen/_16ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        tools:text="8" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/tvMins"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:textColor="@android:color/black"-->
+            <!--                        android:textSize="@dimen/_10ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        android:text="Minutes" />-->
+            <!--                </LinearLayout>-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginStart="@dimen/_10sdp"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:background="@android:color/darker_gray"-->
+            <!--                    android:gravity="center"-->
+            <!--                    android:orientation="vertical"-->
+            <!--                    android:padding="@dimen/_10sdp"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent">-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/tvSecsCount"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:textColor="@android:color/black"-->
+            <!--                        android:textSize="@dimen/_16ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        tools:text="8" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/tvSecsDays"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:textColor="@android:color/black"-->
+            <!--                        android:textSize="@dimen/_10ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        android:text="Seconds" />-->
+            <!--                </LinearLayout>-->
+            <!--            </LinearLayout>-->
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

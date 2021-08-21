@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Practical</string>
+    <string name="fetch_user">Fetch User</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="draw_date">Draw Date:</string>
+    <string name="time_remaining">Time remaining</string>
+</resources>
