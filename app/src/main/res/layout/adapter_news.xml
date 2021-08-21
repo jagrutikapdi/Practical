@@ -30,8 +30,8 @@
                 android:id="@+id/image"
                 app:imageUrl="@{data.urlToImage}"
                 android:scaleType="fitXY"
-                android:layout_width="@dimen/_100sdp"
-                android:layout_height="@dimen/_100sdp"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -75,6 +75,22 @@
                 android:textStyle="bold"
                 tools:text="2021-08-21T04:05:00+00:00"
                 app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvLink"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="@{data.url}"
+                app:layout_constraintTop_toBottomOf="@+id/tvDate"
+                android:textAllCaps="true"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                tools:text="2021-08-21T04:05:00+00:00"
+                app:layout_constraintStart_toStartOf="parent" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
