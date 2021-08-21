@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
-        <import type="com.practical.util.Utils"/>
         <variable
             name="data"
             type="com.practical.data.model.Articles" />
     </data>
 
-    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_margin="@dimen/_8sdp"
         android:background="@android:color/white"
         app:cardBackgroundColor="@android:color/white"
@@ -22,45 +21,60 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="@dimen/_12sdp">
 
-            <ImageView
-                android:id="@+id/image"
-                app:imageUrl="@{data.urlToImage}"
-                android:scaleType="fitXY"
-                android:layout_width="@dimen/_100sdp"
-                android:layout_height="@dimen/_100sdp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvTitle"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:gravity="start"
                 android:text="@{data.title}"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/_14ssp"
+                app:layout_constraintEnd_toEndOf="parent"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/image"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Supreme Court Grants Temporary Reprieve to Biden Immigration Policy" />
 
             <TextView
+                android:id="@+id/tvDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="@{data.title}"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                tools:text="Supreme Court Grants Temporary Reprieve to Biden Immigration Policy" />
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="@dimen/_120sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDesc" />
+
+            <TextView
                 android:id="@+id/tvAuthor"
                 android:layout_width="0dp"
-                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_12sdp"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                app:layout_constraintEnd_toStartOf="@+id/image"
                 android:text="@{data.author}"
                 android:textColor="@android:color/holo_orange_dark"
                 android:textSize="@dimen/_12ssp"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@+id/image"
                 tools:text="Eileen Sullivan, Adam Liptak" />
 
             <TextView
@@ -68,6 +82,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:text="@{data.publishedAt}"
                 app:layout_constraintTop_toBottomOf="@+id/tvAuthor"
                 android:textAllCaps="true"
                 android:textColor="@android:color/darker_gray"
@@ -75,6 +90,7 @@
                 android:textStyle="bold"
                 tools:text="2021-08-21T04:05:00+00:00"
                 app:layout_constraintStart_toStartOf="parent" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

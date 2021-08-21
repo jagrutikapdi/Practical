@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         setupViewModel()
         observeViewModel()
         lifecycleScope.launch {
-            mainViewModel.ticketIntent.send(MainIntent.FetchTickets)
+            mainViewModel.newsIntent.send(MainIntent.FetchNews)
         }
     }
 

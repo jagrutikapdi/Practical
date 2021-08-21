@@ -1,13 +1,16 @@
 package com.practical.ui.main.adapter
 
 import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import com.practical.data.model.Articles
 import com.practical.databinding.AdapterNewsBinding
+import com.practical.ui.main.view.NewsDetailsActivity
 import com.practical.util.BaseBindingAdapter
 import com.practical.util.BaseBindingViewHolder
+import com.practical.util.Utils
 
 
 class NewsAdapter(private val activity: Activity) :
@@ -22,6 +25,12 @@ class NewsAdapter(private val activity: Activity) :
     override fun onBindViewHolder(holder: BaseBindingViewHolder, position: Int) {
         binding = holder.binding as AdapterNewsBinding
         binding!!.data = items?.get(position)
+        binding!!.tvDate.text = Utils.convertDate(binding!!.data!!.publishedAt)
+        binding!!.root.setOnClickListener{
+            val intent = Intent(activity, NewsDetailsActivity::class.java)
+            intent.putExtra("data", items?.get(position))
+            activity.startActivity(intent)
+        }
     }
 
 

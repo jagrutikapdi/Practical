@@ -19,7 +19,7 @@ class MainViewModel(
     private val repository: MainRepository,activity: Activity
 ) : ViewModel() {
 
-   public val ticketIntent = Channel<MainIntent>(Channel.UNLIMITED)
+   public val newsIntent = Channel<MainIntent>(Channel.UNLIMITED)
     private val _state = MutableStateFlow<MainState>(MainState.Idle)
     val state: StateFlow<MainState>
         get() = _state
@@ -30,9 +30,9 @@ class MainViewModel(
 
     private fun handleIntent() {
         viewModelScope.launch {
-            ticketIntent.consumeAsFlow().collect {
+            newsIntent.consumeAsFlow().collect {
                 when (it) {
-                    is MainIntent.FetchTickets ->fetchData ()
+                    is MainIntent.FetchNews ->fetchData ()
                 }
             }
         }

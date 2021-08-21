@@ -5,8 +5,7 @@ import retrofit2.http.*
 @JvmSuppressWildcards
 interface ApiService {
 
-   @FormUrlEncoded
    @JvmSuppressWildcards
-   @POST("top-headlines?sources=google-news&apiKey=9a0c8e375ada4198a26f7a52638c4b78")
+   @GET("top-headlines?sources=google-news&apiKey=9a0c8e375ada4198a26f7a52638c4b78")
    suspend fun getData( ): NewsData
 }

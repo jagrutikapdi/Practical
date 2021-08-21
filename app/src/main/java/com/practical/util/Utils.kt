@@ -6,6 +6,9 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import com.practical.R
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
 
 class Utils {
     companion object {
@@ -27,6 +30,18 @@ class Utils {
             } catch (e: Exception) {
                 e.printStackTrace()
             }
+        }
+
+        fun convertDate( dateStr:String):String{
+            var dateConvert =  dateStr.substring(0, 19).replace("T"," ");
+            val dateFormat: DateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+            val date: Date =
+                dateFormat.parse(dateConvert) //You will get date object relative to server/client timezone wherever it is parsed
+            val formatter: DateFormat =
+                SimpleDateFormat("dd MMM, yyyy hh:mm a") //If you need time just put specific format for time like 'HH:mm:ss'
+
+            return formatter.format(date)
+
         }
     }
 }
