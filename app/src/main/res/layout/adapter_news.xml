@@ -84,7 +84,6 @@
                 android:gravity="start"
                 android:text="@{data.url}"
                 app:layout_constraintTop_toBottomOf="@+id/tvDate"
-                android:textAllCaps="true"
                 android:textColor="@android:color/holo_blue_dark"
                 android:textSize="@dimen/_12sdp"
                 android:textStyle="bold"

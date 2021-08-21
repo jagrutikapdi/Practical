@@ -7,8 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/bg"
-        android:orientation="vertical"
-        tools:context=".ui.main.view.MainActivity">
+        android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -33,9 +32,9 @@
                 android:layout_marginEnd="@dimen/_25sdp"
                 android:background="@android:color/white"
                 android:gravity="center"
-                android:padding="@dimen/_10sdp"
+                android:padding="@dimen/_4sdp"
                 app:layout_constraintStart_toEndOf="@id/ivBackWeb"
-                android:text="News"
+                android:text="Web Details"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/_16ssp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -46,8 +45,22 @@
 
         <WebView
             android:id="@+id/webview"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/_10sdp" />
+
+        <LinearLayout
+            android:id="@+id/progressBar"
+            android:visibility="visible"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ProgressBar
+                android:layout_gravity="center|center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
     </LinearLayout>
 </layout>

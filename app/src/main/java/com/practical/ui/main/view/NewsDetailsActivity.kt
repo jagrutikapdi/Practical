@@ -1,32 +1,14 @@
 package com.practical.ui.main.view
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProviders
-import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.practical.R
-import com.practical.data.api.ApiHelperImpl
-import com.practical.data.api.RetrofitBuilder
 import com.practical.data.model.Articles
-import com.practical.data.model.NewsData
 import com.practical.databinding.ActivityNewsDetailsBinding
-import com.practical.ui.main.adapter.NewsAdapter
-import com.practical.ui.main.intent.MainIntent
-import com.practical.ui.main.viewmodel.MainViewModel
-import com.practical.ui.main.viewstate.MainState
-import com.practical.util.ViewModelFactory
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_news_details.*
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 
-@ExperimentalCoroutinesApi
 class NewsDetailsActivity : AppCompatActivity() {
 
     var mBinding:ActivityNewsDetailsBinding? = null
@@ -42,6 +24,11 @@ class NewsDetailsActivity : AppCompatActivity() {
         mBinding?.data = intent.getSerializableExtra("data") as Articles
         ivBack.setOnClickListener{
             onBackPressed()
+        }
+        imageDetails.setOnClickListener{
+            val intent = Intent(this, ZoomImageActivity::class.java)
+            intent.putExtra("url", mBinding?.data?.urlToImage)
+            startActivity(intent)
         }
     }
 
